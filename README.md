@@ -1,6 +1,11 @@
 
 # Alaya mern dev challenge 
 
+## Before you start
+
+To complete the challenge, please fork the repository and work from there. Then send us your repo with read rights.
+
+## Presentation
 
 In this project which is a MERN stack you can write and edit post blog.
 
@@ -29,10 +34,12 @@ To start the Front-end
     npm start
 ```
 
-
 ## Show us your skills :)
 
-To show us your skills we would like you to build theses 2 things:
+Please create a pull request for each exercise, so that we can evaluate the final features' code.
+Don't hesitate to enhance the setup documentation if required.
+
+To show us your skills we would like you to build theses 2 features:
 
 ### 1 - User account management
 
@@ -58,4 +65,4 @@ Also if you want to add one or more features or change the layout, styling and t
 
 Good luck :)
 
-_Notes: For evaluation, we will mainly focus on the code structure and readability, the separation of responsibilities in the methods/components, and the visual consistency._
+_Notes: For evaluation, we will mainly focus on the code structure and readability, the separation of concerns in the methods/components, and the visual consistency._
