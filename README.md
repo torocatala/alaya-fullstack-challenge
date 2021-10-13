@@ -1,10 +1,6 @@
 
 # Alaya mern dev challenge 
 
-## Before you start
-
-To complete the challenge, please fork the repository and work from there. Then send us your repo with read rights.
-
 ## Presentation
 
 In this project which is a MERN stack you can write and edit post blog.
