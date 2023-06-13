@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import PostListPage from './Post/pages/PostListPage/PostListPage';
 import PostDetailPage from './Post/pages/PostDetailPage/PostDetailPage';
-import { Provider } from 'react-redux';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Nav/components/Navbar';
+import LoginPage from './Authentication/pages/LoginPage/LoginPage';
+import SignupPage from './Authentication/pages/SignupPage/SignupPage';
 
-const theme = createMuiTheme({
+
+
+const theme = createTheme({
     palette: {
         primary: {
             main: '#1ecde2',
@@ -22,17 +26,19 @@ function App(props) {
   return (
       <ThemeProvider theme={theme}>
           <div className="w-100">
-              <Navbar />
-              <div className="w-100 pt-5 mt-5">
-                  <Provider store={props.store}>
+            <Provider store={props.store}>
+                <Navbar />
+                <div className="w-100 pt-5 mt-5">
                     <BrowserRouter>
                       <Switch>
                           <Route path="/" exact component={PostListPage} />
                           <Route path="/posts/:cuid/:slug" exact component={PostDetailPage} />
+                          <Route path="/login" exact component={LoginPage} />
+                          <Route path="/signup" exact component={SignupPage} />
                       </Switch>
                     </BrowserRouter>
-                  </Provider>
-              </div>
+                </div>
+            </Provider>
           </div>
       </ThemeProvider>
 );
