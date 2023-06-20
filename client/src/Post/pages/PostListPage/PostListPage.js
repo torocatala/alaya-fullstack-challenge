@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 // Import Components
 import PostList from '../../components/PostList';
@@ -15,7 +14,7 @@ const PostListPage = ({ showAddPost }) => {
 
   useEffect(() => {
     dispatch(fetchPosts());
-  },[]);
+  });
 
   const handleDeletePost = post => {
     if (confirm('Do you want to delete this post')) { // eslint-disable-line
@@ -50,9 +49,7 @@ const PostListPage = ({ showAddPost }) => {
   );
 };
 
-PostListPage.propTypes = {
-  showAddPost: PropTypes.bool.isRequired
-};
+
 
 
 export default PostListPage;
