@@ -7,8 +7,30 @@ services:
       - "80:80"
     depends_on:
       - server
+    volumes:
+      - ./client:/app
+      - /app/node_modules
 
   server:
     build: ./server
     ports:
       - "3000:3000"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    depends_on:
+      - mongo
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    volumes:
+      - ./data:/data/db
+    expose:
+      - "27017"
